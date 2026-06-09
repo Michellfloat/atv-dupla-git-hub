@@ -28,6 +28,11 @@
   text-align: center;
 }
 
+.hero-section h1{
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .hero-conteudo {
   max-width: 800px;
   margin: 0 auto;
