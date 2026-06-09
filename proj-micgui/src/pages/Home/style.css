@@ -1,36 +1,18 @@
 /* ==========================================================================
-   PAGE: Home / Produtos
+   PAGE: Home
    ========================================================================== */
-
-:root {
-  --primary-color: #4f46e5;
-  --primary-hover: #4338ca;
-  --bg-dark-hero: #0f172a;       /* Slate Escuro */
-  --text-light: #f8fafc;
-  --text-dark: #1e293b;
-  --text-muted: #64748b;
-  --bg-card: #ffffff;
-  --border-card: #e2e8f0;
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --radius-lg: 12px;
-}
 
 .home-container {
   width: 100%;
   box-sizing: border-box;
 }
 
-/* --- SEÇÃO HERO --- */
+/* O Hero mantém um visual premium escuro imersivo em ambos os modos para gerar destaque */
 .hero-section {
   background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-  color: var(--text-light);
+  color: #f8fafc;
   padding: 4rem 1.5rem;
   text-align: center;
-}
-
-.hero-section h1{
-  color: white;
-  font-family: 'Times New Roman', Times, serif;
 }
 
 .hero-conteudo {
@@ -44,6 +26,7 @@
   font-weight: 800;
   margin-bottom: 1.25rem;
   letter-spacing: -0.05em;
+  color: #ffffff;
 }
 
 .hero-conteudo p {
@@ -57,26 +40,21 @@
   display: inline-block;
   text-decoration: none;
   background-color: var(--primary-color);
-  color: var(--text-light);
+  color: #ffffff;
   padding: 0.85rem 2rem;
   font-weight: 600;
   font-size: 1rem;
   border-radius: var(--radius-lg);
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
-  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+  transition: var(--transition-fast);
 }
 
 .btn-principal:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
 }
 
-.btn-principal:active {
-  transform: translateY(0);
-}
-
-/* --- SEÇÃO DESTAQUES --- */
+/* Seção de destaques se adapta totalmente ao tema */
 .destaques-section {
   padding: 4rem 1.5rem;
   max-width: 1200px;
@@ -85,13 +63,12 @@
 
 .destaques-section h2 {
   font-size: 1.75rem;
-  color: var(--text-dark);
+  color: var(--text-main);
   text-align: center;
   margin-bottom: 3rem;
   font-weight: 700;
 }
 
-/* Grid Fluido Responsivo */
 .grid-destaques {
   display: grid;
   grid-template-columns: 1fr;
@@ -99,52 +76,33 @@
 }
 
 .card-destaque {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-card);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 2.5rem 2rem;
   text-align: center;
-  box-shadow: var(--shadow-md);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow);
+  transition: var(--transition-theme);
 }
 
 .card-destaque:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.card-destaque .icone {
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: 1.25rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 20px 25px -5px;
 }
 
 .card-destaque h3 {
   font-size: 1.25rem;
-  color: var(--text-dark);
+  color: var(--text-main);
   margin-bottom: 0.75rem;
   font-weight: 600;
 }
 
 .card-destaque p {
-  font-size: 0.95rem;
   color: var(--text-muted);
-  line-height: 1.6;
 }
 
-/* ==========================================================================
-   MEDIA QUERIES (Tablets e Desktops)
-   ========================================================================== */
 @media (min-width: 768px) {
-  .hero-section {
-    padding: 6rem 2rem;
-  }
-  
-  .hero-conteudo h1 {
-    font-size: 3.5rem;
-  }
-
-  .grid-destaques {
-    grid-template-columns: repeat(3, 1fr); /* 3 Colunas idênticas */
-  }
+  .hero-section { padding: 6rem 2rem; }
+  .hero-conteudo h1 { font-size: 3.5rem; }
+  .grid-destaques { grid-template-columns: repeat(3, 1fr); }
 }

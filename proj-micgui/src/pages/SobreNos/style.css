@@ -1,13 +1,6 @@
 /* ==========================================================================
-   PAGE: Sobre Nós (Institucional)
+   PAGE: Sobre Nós
    ========================================================================== */
-
-:root {
-  --text-dark: #0f172a;
-  --text-muted: #334155;
-  --primary-color: #4f46e5;
-  --bg-section: #f8fafc;
-}
 
 .sobrenos-container {
   max-width: 900px;
@@ -22,13 +15,11 @@
 .historia-section h2, 
 .valores-section h2 {
   font-size: 1.85rem;
-  color: var(--text-dark);
+  color: var(--text-main);
   font-weight: 700;
   margin-bottom: 1.5rem;
-  position: relative;
 }
 
-/* Detalhe estético sutil abaixo dos títulos */
 .historia-section h2::after,
 .valores-section h2::after {
   content: '';
@@ -41,13 +32,9 @@
 }
 
 .historia-texto p {
-  font-size: 1.05rem;
   color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
 }
 
-/* Lista de Valores Limpa e Sem Bullets Padrão */
 .lista-valores {
   list-style: none;
   padding: 0;
@@ -58,26 +45,21 @@
 }
 
 .lista-valores li {
-  background-color: var(--bg-section);
+  background-color: var(--bg-surface);
   border-left: 4px solid var(--primary-color);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   padding: 1.5rem;
   border-radius: 0 12px 12px 0;
-  font-size: 1rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  transition: var(--transition-theme);
 }
 
 .lista-valores li strong {
-  color: var(--text-dark);
-  display: inline-block;
-  margin-bottom: 0.25rem;
+  color: var(--text-main);
 }
 
-/* ==========================================================================
-   MEDIA QUERIES (Desktops)
-   ========================================================================== */
 @media (min-width: 768px) {
-  .sobrenos-container {
-    padding: 6rem 2rem;
-  }
+  .sobrenos-container { padding: 6rem 2rem; }
 }
