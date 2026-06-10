@@ -1,107 +1,135 @@
-/* Container de Serviços */
+/* ==========================================================================
+   PAGE: Serviços (Vitrine de Vendas)
+   ========================================================================== */
+
+:root {
+  --primary-color: #4f46e5;
+  --success-color: #10b981;      /* Verde Esmeralda para conversão */
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --bg-card: #ffffff;
+  --border-color: #f1f5f9;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+}
+
 .servicos-container {
+  padding: 4rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 20px;
 }
 
 .servicos-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 4rem;
 }
 
 .servicos-header h2 {
-  font-size: 2.2rem;
-  color: #222;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  color: var(--text-dark);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
 }
 
 .servicos-header p {
-  color: #777;
-  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
 }
 
-/* Grid de cards de vendas */
+/* Vitrine baseada em Auto-Placement Grid */
 .vitrine-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
-/* Card individual de Produto/Serviço */
 .card-venda {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 30px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  position: relative;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Efeito Hover Dinâmico: O card "salta" e a borda ganha destaque azul */
 .card-venda:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(30, 60, 114, 0.1);
-  border-color: #1e3c72;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: #cbd5e1;
 }
 
-/* Tags de diferenciação (Serviço vs Produto) */
-.tag {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+/* Badge/Tag */
+.tag.servico {
+  align-self: flex-start;
+  background-color: #e0e7ff;
+  color: var(--primary-color);
   font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
-  font-weight: bold;
-  padding: 4px 10px;
-  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.05em;
 }
-
-.tag.servico { background-color: #e3f2fd; color: #0d47a1; }
-.tag.produto { background-color: #e8f5e9; color: #1b5e20; }
 
 .card-venda h3 {
-  font-size: 1.4rem;
-  color: #222;
-  margin: 15px 0 10px 0;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin: 0 0 0.75rem 0;
+  font-weight: 700;
 }
 
 .card-venda .descricao {
-  color: #666;
   font-size: 0.95rem;
+  color: var(--text-muted);
   line-height: 1.5;
-  flex-grow: 1; /* Faz a descrição ocupar o espaço livre empurrando o preço para baixo */
-  margin-bottom: 20px;
+  margin: 0 0 2rem 0;
+  flex-grow: 1; /* Garante alinhamento perfeito do botão de compra */
 }
 
-/* Área de exibição do preço */
+/* Contêiner de Preço Inteligente */
 .preco-container {
-  border-top: 1px dashed #eee;
-  padding-top: 15px;
-  margin-bottom: 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1.25rem;
 }
 
-.preco-label { color: #aaa; font-size: 0.85rem; }
-.preco-valor { font-size: 1.3rem; font-weight: bold; color: #1e3c72; }
+.preco-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
 
-/* Botão de Compra interno do card */
+.preco-valor {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+/* Botão de Conversão */
 .btn-comprar {
-  background-color: #1e3c72;
-  color: white;
+  width: 100%;
+  background-color: var(--text-dark);
+  color: #ffffff;
   border: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: bold;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
 }
 
 .btn-comprar:hover {
-  background-color: #2a5298;
+  background-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-comprar:active {
+  transform: scale(0.98);
 }

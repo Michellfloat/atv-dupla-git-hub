@@ -1,116 +1,191 @@
-/* Container de Produtos */
+/* ==========================================================================
+   PAGE: Vitrine de Produtos (Silva Vendas)
+   ========================================================================== */
+
+:root {
+  --primary-color: #4f46e5;       /* Indigo para botões principais */
+  --primary-hover: #4338ca;
+  --text-dark: #0f172a;           /* Slate escuro para títulos */
+  --text-muted: #475569;          /* Cinza médio para descrições */
+  --price-color: #10b981;         /* Verde Esmeralda para destaque do preço */
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.01);
+  --transition-fast: all 0.2s ease-in-out;
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Contêiner Base */
 .produtos-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 3rem 1.25rem;
+  box-sizing: border-box;
 }
 
+/* Cabeçalho da Página */
 .produtos-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 3.5rem;
 }
 
 .produtos-header h2 {
-  font-size: 2.2rem;
-  color: #1e3c72;
+  font-size: 2rem;
+  color: var(--text-dark);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.5rem 0;
 }
 
 .produtos-header p {
-  color: #666;
-  font-size: 1.1rem;
-  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
 }
 
-/* Grid de Produtos - Layout estilo Ecommerce */
+/* Grid de Produtos de Alta Performance */
 .produtos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: 1fr; /* Mobile-first: 1 coluna */
+  gap: 2rem;
 }
 
-/* Card do Produto */
+/* Card Individual do Produto */
 .card-produto {
-  background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #e0e0e0;
-  overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas do card */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden; /* Garante que a imagem respeite o border-radius */
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
 }
 
 .card-produto:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
 }
 
-/* Espaço reservado para a foto do produto */
+/* Área da Foto do Produto */
 .produto-foto {
+  position: relative;
   width: 100%;
-  height: 200px;
-  background-color: #fafafa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid #f0f0f0;
+  aspect-ratio: 4 / 3; /* Força proporção uniforme independente da imagem */
+  background-color: #f8fafc;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .produto-foto img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta e preenche o espaço de forma elegante */
+  transition: var(--transition-normal);
 }
 
-/* Detalhes e textos do produto */
+/* Micro-interação: Zoom sutil na imagem ao passar o mouse no card */
+.card-produto:hover .produto-foto img {
+  transform: scale(1.05);
+}
+
+/* Bloco de Informações do Conteúdo */
 .produto-info {
-  padding: 20px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-grow: 1; /* Estica o bloco para alinhar os rodapés igualmente */
 }
 
 .produto-info h3 {
   font-size: 1.2rem;
-  color: #222;
-  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
 }
 
 .produto-desc {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.5;
-  margin-bottom: 20px;
-  flex-grow: 1;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1; /* Empurra a área de checkout para a base do card */
 }
 
-/* Alinhamento de Preço e Botão lado a lado */
+/* Seção de Checkout (Preço + Botão) */
 .produto-preco-checkout {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #f9f9f9;
-  padding-top: 15px;
+  flex-direction: column; /* Empilhado no mobile para melhor ergonomia */
+  gap: 1rem;
+  align-items: flex-start;
+  border-top: 1px dashed var(--border-color);
+  padding-top: 1.25rem;
 }
 
 .valor-produto {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #ff6b6b; /* Destaque na cor do preço */
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--price-color);
 }
 
+/* Botão de Adicionar ao Carrinho */
 .btn-carrinho {
-  background-color: #28a745; /* Verde comercial para induzir a compra */
-  color: white;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: #ffffff;
   border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: bold;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: var(--transition-fast);
 }
 
 .btn-carrinho:hover {
-  background-color: #218838;
+  background-color: var(--primary-hover);
+}
+
+.btn-carrinho:active {
+  transform: scale(0.97); /* Feedback tátil de clique */
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (Responsividade Avançada)
+   ========================================================================== */
+
+/* Tablets */
+@media (min-width: 640px) {
+  .produtos-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  }
+  
+  .produto-preco-checkout {
+    flex-direction: row; /* Preço e Botão lado a lado */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn-carrinho {
+    width: auto; /* Botão assume tamanho do conteúdo */
+  }
+}
+
+/* Desktops */
+@media (min-width: 1024px) {
+  .produtos-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas largas */
+    gap: 1.5rem;
+  }
+  
+  .produtos-container {
+    padding: 4rem 0;
+  }
 }

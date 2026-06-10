@@ -1,76 +1,83 @@
-/* Container de Sobre Nós */
+/* ==========================================================================
+   PAGE: Sobre Nós (Institucional)
+   ========================================================================== */
+
+:root {
+  --text-dark: #0f172a;
+  --text-muted: #334155;
+  --primary-color: #4f46e5;
+  --bg-section: #f8fafc;
+}
+
 .sobrenos-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 4rem 1.5rem;
 }
 
-/* Seção da História */
 .historia-section {
-  margin-bottom: 60px;
+  margin-bottom: 4rem;
 }
 
-.historia-texto h2 {
-  font-size: 2.2rem;
-  color: #1e3c72;
-  margin-bottom: 20px;
+.historia-section h2, 
+.valores-section h2 {
+  font-size: 1.85rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 
-/* Detalhe visual elegante: linha azul abaixo do título */
-.historia-texto h2::after {
+/* Detalhe estético sutil abaixo dos títulos */
+.historia-section h2::after,
+.valores-section h2::after {
   content: '';
   display: block;
-  width: 60px;
+  width: 40px;
   height: 4px;
-  background-color: #ff6b6b;
-  margin-top: 8px;
+  background-color: var(--primary-color);
+  margin-top: 0.5rem;
   border-radius: 2px;
 }
 
 .historia-texto p {
-  font-size: 1.1rem;
-  color: #4a4a4a;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  text-align: justify;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
-/* Seção de Valores corporativos */
-.valores-section {
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 12px;
-  border: 1px solid #eee;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-}
-
-.valores-section h2 {
-  font-size: 1.8rem;
-  color: #222;
-  margin-bottom: 25px;
-}
-
-/* Estilização da lista de valores para não usar bolinhas comuns */
+/* Lista de Valores Limpa e Sem Bullets Padrão */
 .lista-valores {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .lista-valores li {
-  font-size: 1.05rem;
-  color: #555;
+  background-color: var(--bg-section);
+  border-left: 4px solid var(--primary-color);
+  padding: 1.5rem;
+  border-radius: 0 12px 12px 0;
+  font-size: 1rem;
+  color: var(--text-muted);
   line-height: 1.6;
-  margin-bottom: 20px;
-  padding-left: 15px;
-  border-left: 3px solid #ff6b6b; /* Adiciona uma barrinha vertical vermelha antes de cada valor */
 }
 
 .lista-valores li strong {
-  color: #222;
+  color: var(--text-dark);
+  display: inline-block;
+  margin-bottom: 0.25rem;
 }
 
-/* Remove a margem do último item para evitar espaços soltos */
-.lista-valores li:last-child {
-  margin-bottom: 0;
+/* ==========================================================================
+   MEDIA QUERIES (Desktops)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .sobrenos-container {
+    padding: 6rem 2rem;
+  }
 }

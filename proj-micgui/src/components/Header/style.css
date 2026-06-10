@@ -1,0 +1,82 @@
+/* ==========================================================================
+   COMPONENT: Header (Navegação Principal)
+   ========================================================================== */
+
+:root {
+  --primary-color: #4f46e5;      /* Indigo moderno */
+  --primary-hover: #4338ca;
+  --text-dark: #111827;          /* Grafite de alto contraste */
+  --text-muted: #4b5563;
+  --bg-light: #ffffff;
+  --border-color: #e5e7eb;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--bg-light);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  gap: 1rem;
+}
+
+.header-logo {
+  text-decoration: none;
+}
+
+.header-logo h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Estilização dos Links do React Router */
+.header nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.header nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Classe injetada automaticamente pelo NavLink ativo */
+.header nav a.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (Desktop)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    padding: 1rem 5%;
+    gap: 0;
+  }
+  
+  .header nav {
+    gap: 1.5rem;
+  }
+}

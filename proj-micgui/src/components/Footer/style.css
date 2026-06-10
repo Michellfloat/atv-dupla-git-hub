@@ -1,0 +1,29 @@
+/* ==========================================================================
+   COMPONENT: Footer (Rodapé de Página)
+   ========================================================================== */
+
+.footer {
+  background-color: #0f172a;    /* Fundo Escuro Corporativo */
+  color: #94a3b8;               /* Texto suave de baixo contraste */
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid #1e293b;
+  margin-top: auto;             /* Garante o footer colado na base se a página for curta */
+}
+
+.footer p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+}
+
+.footer br {
+  display: inline;
+}
+
+@media (min-width: 768px) {
+  .footer br {
+    display: none;              /* Remove a quebra em telas horizontais amplas */
+  }
+}
