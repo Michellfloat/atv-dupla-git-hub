@@ -4,12 +4,35 @@ import './style.css';
 export default function Produtos() {
   // Lista focada apenas em produtos (físicos ou digitais) da Silva Vendas
   const listaProdutos = [
-    { id: 1, nome: 'E-book: Guia de Vendas', preco: 'R$ 49,90', imagem: 'https://via.placeholder.com/150', desc: 'O passo a passo definitivo para triplicar suas vendas online.' },
-    { id: 2, nome: 'Template Dashboard Premium', preco: 'R$ 120,00', imagem: 'https://via.placeholder.com/150', desc: 'Painel administrativo completo em React para acelerar seu projeto.' },
-    { id: 3, nome: 'Caneca Exclusiva Silva Vendas', preco: 'R$ 35,00', imagem: 'https://via.placeholder.com/150', desc: 'Caneca de cerâmica personalizada para acompanhar seu café no trabalho.' },
-    { id: 4, nome: 'Pack de Elementos UI/UX', preco: 'R$ 89,90', imagem: 'https://via.placeholder.com/150', desc: 'Mais de 500 componentes prontos para usar no Figma e agilizar seus designs.' }
+    { 
+      id: 1, 
+      nome: 'E-book: Guia de Vendas', 
+      preco: 'R$ 49,90', 
+      imagem: '/ebook.png', 
+      desc: 'O passo a passo definitivo para triplicar suas vendas online.' 
+    },
+    { 
+      id: 2, 
+      nome: 'Template Dashboard Premium', 
+      preco: 'R$ 120,00', 
+      imagem: '/dashboard.png', 
+      desc: 'Painel administrativo completo em React para acelerar seu projeto.' 
+    },
+    { 
+      id: 3, 
+      nome: 'Caneca Exclusiva Silva Vendas', 
+      preco: 'R$ 35,00', 
+      imagem: '/caneca.png', 
+      desc: 'Caneca de cerâmica personalizada para acompanhar seu café no trabalho.' 
+    },
+    { 
+      id: 4, 
+      nome: 'Pack de Elementos UI/UX', 
+      preco: 'R$ 89,90', 
+      imagem: '/ui-pack.png', 
+      desc: 'Mais de 500 componentes prontos para usar no Figma e agilizar seus designs.' 
+    }
   ];
-
   return (
     <main className="produtos-container">
       <header className="produtos-header">
