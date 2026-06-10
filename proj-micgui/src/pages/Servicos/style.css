@@ -1,1 +1,107 @@
+/* Container de Serviços */
+.servicos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
 
+.servicos-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.servicos-header h2 {
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.servicos-header p {
+  color: #777;
+  font-size: 1.1rem;
+}
+
+/* Grid de cards de vendas */
+.vitrine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Card individual de Produto/Serviço */
+.card-venda {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Efeito Hover Dinâmico: O card "salta" e a borda ganha destaque azul */
+.card-venda:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(30, 60, 114, 0.1);
+  border-color: #1e3c72;
+}
+
+/* Tags de diferenciação (Serviço vs Produto) */
+.tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.tag.servico { background-color: #e3f2fd; color: #0d47a1; }
+.tag.produto { background-color: #e8f5e9; color: #1b5e20; }
+
+.card-venda h3 {
+  font-size: 1.4rem;
+  color: #222;
+  margin: 15px 0 10px 0;
+}
+
+.card-venda .descricao {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-grow: 1; /* Faz a descrição ocupar o espaço livre empurrando o preço para baixo */
+  margin-bottom: 20px;
+}
+
+/* Área de exibição do preço */
+.preco-container {
+  border-top: 1px dashed #eee;
+  padding-top: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preco-label { color: #aaa; font-size: 0.85rem; }
+.preco-valor { font-size: 1.3rem; font-weight: bold; color: #1e3c72; }
+
+/* Botão de Compra interno do card */
+.btn-comprar {
+  background-color: #1e3c72;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-comprar:hover {
+  background-color: #2a5298;
+}

@@ -1,0 +1,116 @@
+/* Container de Produtos */
+.produtos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.produtos-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.produtos-header h2 {
+  font-size: 2.2rem;
+  color: #1e3c72;
+}
+
+.produtos-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Grid de Produtos - Layout estilo Ecommerce */
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Card do Produto */
+.card-produto {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas do card */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-produto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Espaço reservado para a foto do produto */
+.produto-foto {
+  width: 100%;
+  height: 200px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.produto-foto img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+/* Detalhes e textos do produto */
+.produto-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.produto-info h3 {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.produto-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Alinhamento de Preço e Botão lado a lado */
+.produto-preco-checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f9f9f9;
+  padding-top: 15px;
+}
+
+.valor-produto {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff6b6b; /* Destaque na cor do preço */
+}
+
+.btn-carrinho {
+  background-color: #28a745; /* Verde comercial para induzir a compra */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-carrinho:hover {
+  background-color: #218838;
+}

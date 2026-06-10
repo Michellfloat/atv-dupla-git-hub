@@ -1,0 +1,103 @@
+/* Container principal da Home */
+.home-container {
+  width: 100%;
+}
+
+/* Estilização do Banner Principal (Hero) */
+.hero-section {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Fundo degradê azul corporativo */
+  color: #ffffff;
+  padding: 100px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-conteudo {
+  max-width: 700px;
+}
+
+.hero-conteudo h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-conteudo p {
+  font-size: 1.2rem;
+  margin-bottom: 35px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Botão de Destaque (Call to Action) */
+.btn-principal {
+  background-color: #ff6b6b; /* Cor chamativa para conversão */
+  color: #ffffff;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-principal:hover {
+  background-color: #ff5252;
+  transform: translateY(-3px); /* Efeito flutuante no hover */
+}
+
+/* Seção de Benefícios/Destaques */
+.destaques-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.destaques-section h2 {
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 50px;
+}
+
+/* Grid para alinhar os benefícios lado a lado */
+.grid-destaques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card-destaque {
+  background: #ffffff;
+  padding: 40px 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+.card-destaque .icone {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.card-destaque h3 {
+  font-size: 1.4rem;
+  color: #1e3c72;
+  margin-bottom: 12px;
+}
+
+.card-destaque p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsivo para celular */
+@media (max-width: 768px) {
+  .hero-conteudo h1 { font-size: 2rem; }
+  .hero-conteudo p { font-size: 1rem; }
+  .destaques-section { padding: 50px 20px; }
+}
