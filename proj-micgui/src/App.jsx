@@ -14,7 +14,7 @@ function App() {
   return (
     <>
     <main> 
-      <Router>
+   
         <Header />
   
         <Routes>
@@ -24,7 +24,7 @@ function App() {
           <Route path='/produtos' element={<Produtos />}/>
         </Routes>
 
-      </Router>
+      
    </main> 
 
    <Footer />
