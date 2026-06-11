@@ -1,8 +1,10 @@
 // Importa o estilo exclusivo da vitrine de produtos
 import './style.css';
 
-export default function Produtos() {
+// RECEBIDO: A página de produtos agora aceita a função global via Prop
+export default function Produtos({ adicionarAoCarrinho }) {
   // Lista focada apenas em produtos (físicos ou digitais) da Silva Vendas
+  // MODIFICADO: Caminhos apontando para os arquivos reais salvos em public/
   const listaProdutos = [
     { 
       id: 1, 
@@ -33,6 +35,7 @@ export default function Produtos() {
       desc: 'Mais de 500 componentes prontos para usar no Figma e agilizar seus designs.' 
     }
   ];
+
   return (
     <main className="produtos-container">
       <header className="produtos-header">
@@ -52,7 +55,15 @@ export default function Produtos() {
               <p className="produto-desc">{produto.desc}</p>
               <div className="produto-preco-checkout">
                 <span className="valor-produto">{produto.preco}</span>
-                <button className="btn-carrinho">Adicionar ao Carrinho</button>
+                
+                {/* MODIFICADO: Ao clicar, passa o objeto completo deste produto específico */}
+                <button 
+                  className="btn-carrinho" 
+                  onClick={() => adicionarAoCarrinho(produto)}
+                >
+                  Adicionar ao Carrinho
+                </button>
+                
               </div>
             </div>
           </article>
